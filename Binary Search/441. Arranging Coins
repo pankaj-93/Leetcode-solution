@@ -1,0 +1,46 @@
+class Solution {
+    public int maximumCount(int[] arr) {
+
+       
+        int n =arr.length;
+
+        int low = 0;
+        int hi = arr.length-1;
+        int zero=0;
+        
+
+        while(low<=hi){
+            int mid=low+(hi-low)/2;
+            if (arr[mid]<0){
+                low=mid+1;
+            }
+            else {
+                hi=mid-1;
+            }
+            
+            
+        }
+        
+        int neg=low;
+        low=0;
+        hi=n-1;
+
+        while(low<=hi){
+            int mid=low + (hi - low) / 2;
+            if (arr[mid]<=0){
+                low=mid+1;
+            }
+            else{
+                hi=mid-1;
+            }
+        }
+        int pos=n-low;
+
+
+        int max =Math.max(pos,neg);
+        return max;
+     
+        
+        
+    }
+}
