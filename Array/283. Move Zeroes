@@ -1,0 +1,29 @@
+class Solution {
+    public void moveZeroes(int[] arr) {
+
+        int n= arr.length;
+        int le=0;
+        int ri=0;
+
+        while(le<n && ri<n){
+            if(arr[le]==0&&arr[ri]!=0){
+                int temp=arr[le];
+                arr[le]=arr[ri];
+                arr[ri]=temp;
+
+                le++;
+                ri++;
+            
+            }
+            else if(arr[ri]==0){
+                ri++;
+            }
+            else{
+                ri++;
+                le++;
+            }
+
+        }
+
+    }  
+}
